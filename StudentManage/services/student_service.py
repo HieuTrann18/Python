@@ -1,5 +1,5 @@
 from data.sample_students import get_sample_students
-
+from datetime import datetime
 class Student_Service:
       def __init__(self):
             self.students = get_sample_students()
@@ -30,7 +30,7 @@ class Student_Service:
             line = ":".join(data)
             try:
                   with open(file_name, "a", encoding='utf-8') as f:
-                        f.write(line + timeStamp + '\n')
+                        f.write(line + timeStamp + ':' + '\n')
                   print('Ghi file thanh cong')      
             except Exception as e:
                   print('Loi ghi file: ', e)

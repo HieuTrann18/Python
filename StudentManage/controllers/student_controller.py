@@ -22,7 +22,7 @@ class Student_Controller:
             self.student_service.write_students_to_file(new_student)
 
             print(f'Them sinh vien {firstname} {middlename} {lastname} thanh cong!\n')
-            new_student.display_info()
+
       
       def get_all_student(self):
             results = self.student_service.display_all_student()
