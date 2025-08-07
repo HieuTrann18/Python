@@ -19,6 +19,7 @@ class Student_Service:
             return result
       
       def write_students_to_file(self, student, file_name='students.txt'):
+            timeStamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             data = [
                   student.get_fullname().replace(" ", ""),
                   str(student.get_age()),
@@ -29,7 +30,7 @@ class Student_Service:
             line = ":".join(data)
             try:
                   with open(file_name, "a", encoding='utf-8') as f:
-                        f.write(line + '\n')
+                        f.write(line + timeStamp + '\n')
                   print('Ghi file thanh cong')      
             except Exception as e:
                   print('Loi ghi file: ', e)
