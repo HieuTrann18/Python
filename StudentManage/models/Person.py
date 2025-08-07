@@ -13,7 +13,7 @@ class Person:
         return f"{self.firstname} {self.middlename} {self.lastname}"
 
       def get_age(self):
-        birth = datetime.strptime(self.birthday, "%Y-%m-%d")
+        birth = datetime.strptime(self.birthday.strip(), "%d/%m/%Y")
         today = datetime.today()
         return today.year - birth.year - ((today.month, today.day) < (birth.month, birth.day))
       

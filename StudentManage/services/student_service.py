@@ -1,8 +1,8 @@
-from models.Student import Student
+from data.sample_students import get_sample_students
 
 class Student_Service:
       def __init__(self):
-            self.students = []
+            self.students = get_sample_students()
 
       def create_student(self, student):
             self.students.append(student)
@@ -10,8 +10,8 @@ class Student_Service:
       def display_all_student(self):
             return self.students
       
-      def filter_age_student(self):
-            result = list(filter(lambda s: s.get_age(), self.students ))
+      def filter_age_student(self, ageFilter):
+            result = list(filter(lambda s: s.get_age() > ageFilter, self.students ))
             return result
 
       def filter_score_student(self, minScore, maxScore):

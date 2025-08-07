@@ -33,13 +33,15 @@ class Student_Controller:
                   for s in results:
                         s.display_info()
                   print('=========================')
+            return results
 
       def filter_age_student(self):
-            result = self.student_service.filter_age_student()
+            ageFilter = int(input('Nhap tuoi toi thieu: '))
+            result = self.student_service.filter_age_student(ageFilter)
             if not result:
-                  print("Khong co sinh vien nao lon hon 22 tuoi")
+                  print(f"Khong co sinh vien nao lon hon {ageFilter} tuoi")
             else:
-                  print("===== Danh sach sinh vien co tuoi lon hon 22 =====")
+                  print(f"===== Danh sach sinh vien co tuoi lon hon {ageFilter} =====")
                   for s in result:
                         s.display_info()
                         print("-------------")

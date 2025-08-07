@@ -1,7 +1,7 @@
 
 from controllers.student_controller import Student_Controller
 from services.student_service import Student_Service
-
+from charts.chart_students import draw_gpa_chart
 
 def menu():
       print("\n===== MENU QUAN LY SINH VIEN =====")
@@ -9,7 +9,9 @@ def menu():
       print("2. Hien thi danh sach sinh vien")
       print("3. Loc sinh vien lon hon 22 tuoi")
       print("4. Loc sinh vien co diem tu 80-100 va nho hon 22 tuoi")
-      print("5. Thoat")
+      print("5. Hien thi bieu do diem GPA")
+      print("6. Thoat")
+      print("===================================")
 
 
 if __name__ == '__main__':
@@ -32,8 +34,10 @@ if __name__ == '__main__':
                   case '4':
                         std_ctrl.filter_score_student()
                   case '5':
+                        students = std_ctrl.get_all_student()
+                        draw_gpa_chart(students)
+                  case '6':
                         break
-            
                         
 
   
